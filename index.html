@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only  bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!--Awesome Font-->
+    <script src="https://kit.fontawesome.com/47629bb4fb.js" crossorigin="anonymous"></script>
+    <!--Css stylesheet-->
+    <link  type="text/css" href="styles.css"  rel="stylesheet">
+    <title>Profile Settings</title>
+</head>
+<body>
+    <div class="card">
+        <h1>Profile Settings :</h1>
+        <hr>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">First name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" autocomplete="off" >
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Last name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" autocomplete="off">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" autocomplete="off">
+                </div>
+              
+              <div class="mb-3">
+                <label for="username">Email</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" autocomplete="off">
+                </div>
+              
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">Password</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" autocomplete="off">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Re-enter Password</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" autocomplete="off">
+                </div>
+              </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label id="mode" style="background-image: linear-gradient(to right,#FEF8DD,#FFE7C7); color: black;" class="input-group-text" for="inputGroupSelect01">Theme Mode</label>
+                            </div>
+                            <select class="custom-select" name="mode" id="inputGroupSelect01" onchange="modeAdjust();"> 
+                                <option id="Light" name="analog" value="light">Light Mode</option>
+                                <option id="Dark" name="digital" value="dark" >Dark Mode</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label id="fontSize" style="background-image: linear-gradient(to right,#CAF1DE,#E1F8DC); color: black;" class="input-group-text" for="inputGroupSelect10">Font Size</label>
+                            </div>
+                            <select id="selectedFont" onchange="fontAdjust()" class="custom-select" name="mode" id="inputGroupSelect01" value="">
+                                <option name="xl" value="xl">x-Large</option>
+                                <option name="l" value="l">Large</option>
+                                <option name="m" value="m" selected>Medium</option>
+                                <option name="s" value="s">Small</option>
+                                <option name="xs" value="xs">x-Small</option>
+                                <!-- <option name="H100" value="H100" selected>100%</option>
+                                <option name="H80" value="H80">80%</option>
+                                <option name="H60" value="H60">60%</option>
+                                <option name="H40" value="H40">40%</option>
+                                <option name="H20" value="H20">20%</option> -->
+                            </select>
+                          </div>
+                    </div>
+                </div>
+            
+                <hr>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName" style="font-weight: bold;">Friends You Follow :</label>
+                    <div class="Following">
+                        <div class="card-body">
+                            <div class="row semsem">
+                                <div class="col-lg-9 col-md-9 col-sm-9">
+                                  <input  type="text" class="form-control" id="FollowInput" placeholder="" value="" >
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                  <Button id="follow" onclick="addFollow();" class="btn btn-outline-success">Follow</Button>
+                                </div>
+                                
+                              </div>
+                            <ul class="list-group mb-3 followingList">
+                                
+                                
+                              </ul>
+                        </div>
+                    </div>
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <button id="save" class="btn btn-outline-success btn-lg">Save Changes</button>
+                <button id="cancel" class="btn btn-outline-danger btn-lg">Cancel</button>
+              </div>
+
+        </div>
+    </div>
+    <!--jQuery link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
